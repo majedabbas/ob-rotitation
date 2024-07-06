@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min tow forms</title>
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+</head>
+<body>
+  <nav class="nav" id="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Rotation</button>
+        <div class="dropdown-content">
+            <a href="#addToSheet2">Lägg Rotation</a>
+            <a href="#result">Resultat</a>
+            <a href="#data">Procentsats </a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Ob</button>
+        <div class="dropdown-content">
+            <a href="#schObupdate">Updaterar ob</a>
+            <a href="#ob">Visa Ob</a>
+           
+        </div>
+    </div>
+</nav>
+<div class="container" id="container">
+  <div class="batata" id="schObupdate" >
+    <form id="myFormObupdate" method="POST">
+        <input type="hidden" name="sheetName" value="Sheet1">
+        <table>
+    <tr><td><input type="text" id="datum" name="Datum" placeholder="Välj Datum" class="koko"></td></tr>
+    <tr><td><input type="text" id="dag" name="Dag" placeholder="Dag schema"></td></tr>
+    <tr><td><input type="text" id="UpdOb1" name="Ob1" placeholder="Ob1"></td></tr>
+    <tr><td><input type="text" id="UpdOb2" name="Ob2" placeholder="Ob2"></td></tr>
+    <tr><td><input type="text" id="UpdOb3" name="Ob3" placeholder="Ob3"></td></tr>
+    <tr><td><input type="text" id="UpdOb4" name="Ob4" placeholder="Ob4"></td></tr>
+    <tr><td><input type="text" id="Updavv" name="Avvikelse" placeholder="Avvikelse"></td></tr>
+    <tr><td><button type="button" id="updateButton">Updatera</button></td></tr>
+      </table>
+    </form>
+</div> 
+<div class="batata" id="addToSheet2" style="margin-top: 40px;">
+  <form id="myFormrot" method="POST">
+    
+        <div class="select-wrap"><tr><td><label>Måndag</label>
+        <select name="Mån"id="day1" style="width: 100%;"></select></div>
+        <div class="select-wrap"><label>Tisdag</label></td>
+        <td><select name="Tis"id="day2" style="width: 100%;"></select></td></tr></div>
+        <div class="select-wrap"><tr><td><label>Onsdag</label></td>
+        <td><select name="Ons"id="day3" style="width: 100%;"></select></td></tr></div>
+        <div class="select-wrap"><tr><td><label>Torsdag</label></td>
+        <td><select name="Tors"id="day4" style="width: 100%;"></select></td></tr></div>
+        <div class="select-wrap"><tr><td><label>Fredag</label></td>
+        <td><select name="Fre"id="day5" style="width: 100%;"></select></td></tr></div>
+        <div class="select-wrap"><tr><td><label>Lördag</label></td>
+        <td><select name="Lör"id="day6" style="width: 100%;"></select></td></tr></div>
+        <div class="select-wrap"><tr><td><label>Söndag</label></td>
+        <td><select name="Sön"id="day7" style="width: 100%;"></select></td></tr></div>
+        <div class="select-wrap"><tr><td><label >Schema</label></td>
+        <td><select id="sch1" name="Schema" style="width: 100%;">
+             <option value="">välj Schema</option>
+            <option value="morgon">Morgon</option> 
+            <option value="kväll">Kväll</option>
+            <option value="natt">Natt</option></select></td></tr></div>
+       
+        <button type="submit" id="save">Spara</button>
+  
+</form>
+</div>
+<div id="data">
+  <table class="table">
+      <thead id="data-table-head"></thead>
+      <tbody id="data-table-body"></tbody>
+  </table>
+  </div> 
+  <div id="result">
+  <table class="table">
+      <thead id="result-table-head"></thead>
+      <tbody id="result-table-body"></tbody>
+  </table>                                
+  </div> 
+  <div id="ob">
+  <table class="table">
+      <thead id="ob-table-head"></thead>
+      <tbody id="ob-table-body"></tbody>
+  </table>
+  </div>
+</div> 
+  </div>
+    <div id="footer">
+      &copy;
+      
+      <span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        Rotation och ob Majed
+      </span>
+     
+    </div>
+  
+
+<script src="js/majed.js"></script>
+<script src="js/easyData-google-sheets.js"></script>
+<script src="js/mdb.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+</body>
+</html>
